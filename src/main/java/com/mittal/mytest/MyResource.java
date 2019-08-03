@@ -25,4 +25,13 @@ public class MyResource {
         String ans = multilinguisticUniversalSentenceDecoder.getScore(input);
         return "The score is : "+ans;
     }
+
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public String getScoreRunningPythonScript() {
+        MultilinguisticUniversalSentenceDecoder multilinguisticUniversalSentenceDecoder= new MultilinguisticUniversalSentenceDecoder();
+        multilinguisticUniversalSentenceDecoder.runScript();
+        //TODO: Try it out.
+        return "Done";
+    }
 }
